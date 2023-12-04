@@ -1,0 +1,303 @@
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+}
+//============== Carousel section===============
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:#fff;
+  width:100%;
+  height:100vh;
+  overflow: hidden;
+  position:relative;
+
+  .titleWrapper {
+    color: #ffffff;
+    position: absolute;
+    bottom: 25%;
+    left: 5%;
+    max-width: 40vw;
+    z-index : 10;
+
+    .moreButton {
+      margin-top: 20px;
+      width: 200px;
+      height: 50px;
+      border: 1px solid #fff;
+      border-radius: 50px;
+    }
+  }
+  .carousel {
+    display: flex;
+    width: 60%;
+    height:50%;
+    position:absolute;
+    top:25%;
+    left:40%;
+    overflow: hidden;
+    z-index:10;
+
+    .carouselSlide {
+      flex: 0 0 auto;
+      padding:10px;
+      width:20vw;
+    
+      
+
+      .swiperText{
+        opacity:0;
+      }
+      .imgBox{
+        width:100%;
+        height:100%;
+        border-radius:25px;
+        position:relative;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius:25px;
+          object-fit: cover;
+          box-shadow: 0 1px 9px 2px;
+        }
+        .carouselBg{
+          width:100%;
+          height:100%;
+          background-color:rgba(0,0,0,0.5);
+          border-radius:25px;
+          position:absolute;
+          top:0;
+          z-index:10;
+        }
+      }
+      
+    }
+  }
+  .backgroundImage:not(.backgroundImageActive){
+    .swiperText{
+      visibility:hidden;
+    }
+  }
+  .backgroundImage{
+    width:20vw;
+    height:50%;
+    position:absolute;
+    padding:10px;
+    border-radius:25px;
+ 
+
+    .backgroundImgBox{
+        width:100%;
+        height:100%;
+        border-radius:25px;
+        position:relative;
+        overflow:hidden;  
+        box-shadow: 0 1px 9px 2px;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .virtualBg{
+          width:100%;
+          height:100%;
+          background-color:rgba(0,0,0,0.5);
+          position:absolute;
+          top:0;
+        }
+    }
+    
+  }
+  .carouselBottomWrapper{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    position:absolute;
+    bottom:10%;
+    width:55vw;
+    left:40vw;
+
+    .carouselButtonWrapper {
+      z-index:2;
+      flex-wrap:wrap;
+      display: flex;
+      justify-content: space-between;
+
+      .carouselButton {
+        background: none;
+        font-size: 24px;
+        cursor: pointer;
+        margin:0 10px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border:1px solid #fff;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+    }
+
+    .progressBar{
+      width: 70%;
+      height: 4px;
+      background: #fff;
+      z-index: 2;
+
+      .progressBarInner{
+        width: 0;
+        height: 100%;
+        background: darkorange;
+        transition:0.5s;
+      }
+    }
+
+    .pageIndex {
+      bottom: 0;
+      color: #fff;
+      font-size: 3.125vw;
+      z-index: 2;
+    }
+  }
+}
+
+//============== aboutMe section===============
+
+.aboutSection, .portfoliosSection{
+  padding:65px 0;
+}
+
+.portfoliosSection{
+  .titleWrap{
+    width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      padding-top: 100px;
+      
+      .title{
+        color: #C0C0C0;
+        margin-bottom: 2px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .subTitle{
+        color: #fff;
+        padding-bottom: 15.5px;
+        position: relative;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 44px;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 221px;
+          height: 1px;
+          background: #8E8E8E;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+  }
+  .portfolioWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    // overflow: scroll;
+    height: 64vh;
+    
+    .portfolioItems{
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+
+      .portfolioContent{
+        width: 30%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        margin-bottom: 60px;
+
+        .portfolioBox{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: center;
+          align-content: center;
+          width: 100%;
+          height: 100%;
+          
+          .portfolioItem{
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+            height: 100%;
+
+            .imageBox{
+              overflow: hidden;
+              width: 100%;
+              height: 100%;
+              &:hover {
+                img {
+                  transform: scale(1.1);
+                }
+              }
+
+              .image{
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    max-width: 430px;
+                    max-height: 305px;
+                    transition: all 0.6s;
+                }
+              }
+            }
+
+            .titleBox{
+              width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-items: center;
+              align-content: center;
+              color: #000;
+              margin-top: 15px;
+
+              div{
+                display: flex;
+                font-size: 18px;
+                font-weight: 600;
+                color: #000;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
